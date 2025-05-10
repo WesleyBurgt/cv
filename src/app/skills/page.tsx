@@ -56,7 +56,7 @@ export default function SkillList() {
                         <div className="h-px flex-1 bg-gray-700"></div>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+                    <div className="flex flex-wrap gap-6">
                         {category.skills.map((skill, skillIndex) => (
                             <div
                                 key={skillIndex}
