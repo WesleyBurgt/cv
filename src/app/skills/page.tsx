@@ -1,38 +1,41 @@
 "use client"
 
 import { useState } from "react"
-import { SkillCategory, CategoryManager } from "@/lib/skillManager"
 import { Input } from "@/components/ui/input"
-import { getCategoryManagerData } from "@/data/skills"
 import Image from "next/image"
+import { SkillCategory } from "@/lib/skillCategory";
+import { SkillCategoryList } from "@/data/skillCategories";
+
+function filteredCategoryList(query: string): SkillCategory[] {
+    const categoryList = SkillCategoryList;
+
+    if (!query) return categoryList;
+
+    const lowerQuery = query.toLowerCase();
+    const filtered: SkillCategory[] = [];
+
+    for (const category of categoryList) {
+        const matchingSkills = category.skills.filter(skill =>
+            skill.name.toLowerCase().includes(lowerQuery)
+        );
+
+        if (matchingSkills.length > 0) {
+            const filteredCategory = new SkillCategory(
+                category.name, 
+                category.skills
+            );
+            filtered.push(filteredCategory);
+        }
+    }
+
+    return filtered;
+}
 
 export default function SkillList() {
-    const skillManager = getCategoryManagerData();
     const [searchQuery, setSearchQuery] = useState("")
 
-    const filteredSkillManager = (): CategoryManager => {
-        if (!searchQuery.trim()) return skillManager;
-
-        const filtered = new CategoryManager();
-        const lowerSearch = searchQuery.toLowerCase();
-
-        for (const category of skillManager.categories) {
-            const matchingSkills = category.skills.filter(skill =>
-                skill.name.toLowerCase().includes(lowerSearch)
-            );
-
-            if (matchingSkills.length > 0) {
-                const filteredCategory = new SkillCategory(category.name);
-                filteredCategory.addSkills(matchingSkills);
-                filtered.addCategory(filteredCategory);
-            }
-        }
-
-        return filtered;
-    };
-
-
-    const displayedSkills = filteredSkillManager()
+    const query = searchQuery.trim();
+    const displayedSkills = filteredCategoryList(query);
 
     return (
         <div className="mx-auto max-w-4xl">
@@ -48,7 +51,7 @@ export default function SkillList() {
                 />
             </div>
 
-            {displayedSkills.categories.map((category, index) => (
+            {displayedSkills.map((category, index) => (
                 <div key={index} className="mb-12">
                     <div className="mb-4 flex items-center">
                         <div className="h-px flex-1 bg-gray-700"></div>

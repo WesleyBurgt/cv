@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Project } from "@/lib/skillManager";
+import { Project } from "@/lib/skillProject";
 import { Calendar } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

@@ -2,48 +2,46 @@
 
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
-import { getProjectManagerData } from "@/data/skills"
-import { Project, ProjectManager } from "@/lib/skillManager";
 import ProjectCard from "./projectCard";
+import { Project } from "@/lib/skillProject";
+import { ProjectList } from "@/data/projects";
 
+function filteredProjectList(query: string): Project[] {
+    const projectList = ProjectList;
 
+    if (!query) return projectList;
+
+    const lowerQuery = query.toLowerCase();
+    const filtered: Project[] = [];
+
+    for (const project of projectList) {
+        const nameMatches = project.name.toLowerCase().includes(lowerQuery);
+        const skillMatches = project.skills.some(skill =>
+            skill.name.toLowerCase().includes(lowerQuery)
+        );
+
+        if (nameMatches || skillMatches) {
+            const fullProject = new Project(
+                project.name,
+                project.icon,
+                project.skills,
+                project.urls,
+                project.myWork,
+                project.startDate,
+                project.endDate
+            );
+            filtered.push(fullProject);
+        }
+    }
+
+    return filtered;
+}
 
 export default function SkillsSection() {
-    const projectManager = getProjectManagerData();
     const [searchQuery, setSearchQuery] = useState("")
 
-    const filteredProjectManager = (): ProjectManager => {
-        const query = searchQuery.trim().toLowerCase();
-
-        if (!query) return projectManager;
-
-        const filtered = new ProjectManager();
-
-        for (const project of projectManager.projects) {
-            const nameMatches = project.name.toLowerCase().includes(query);
-            const skillMatches = project.skills.some(skill =>
-                skill.name.toLowerCase().includes(query)
-            );
-
-            if (nameMatches || skillMatches) {
-                const fullProject = new Project(
-                    project.name,
-                    project.icon,
-                    project.urls,
-                    project.myWork,
-                    project.startDate,
-                    project.endDate
-                );
-                fullProject.addSkills(project.skills);
-                filtered.addProject(fullProject);
-            }
-        }
-
-        return filtered;
-    };
-
-
-    const displayedProjects = filteredProjectManager()
+    const query = searchQuery.trim();
+    const displayedProjects = filteredProjectList(query)
 
     return (
         <div className="mx-auto max-w-screen-xl">
@@ -60,10 +58,10 @@ export default function SkillsSection() {
             </div>
 
             <div className="flex flex-wrap gap-6">
-                {displayedProjects.projects.length === 0 ? (
+                {displayedProjects.length === 0 ? (
                     <p className="white text-xl">No results found.</p>
                 ) : (
-                    displayedProjects.projects.map((project, index) => (
+                    displayedProjects.map((project, index) => (
                         <ProjectCard key={index} project={project} />
                     ))
                 )}
