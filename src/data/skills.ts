@@ -1,18 +1,20 @@
 import { Skill, SkillCategory, CategoryManager, ProjectManager, Project, Url } from "@/lib/skillManager"
 
-const csharp: Skill = new Skill("C#", "/images/skills/csharp.svg");
-const javaScript: Skill = new Skill("JavaScript", "/images/skills/javascript.svg");
-const typescript: Skill = new Skill("TypeScript", "/images/skills/typescript.svg");
-const html: Skill = new Skill("HTML", "/images/skills/html.svg");
-const css: Skill = new Skill("CSS", "/images/skills/css.svg");
-const tailwind: Skill = new Skill("tailwind", "/images/skills/tailwind.svg");
-const react: Skill = new Skill("React.js", "/images/skills/react.svg");
-const next: Skill = new Skill("Next.js", "/images/skills/next.svg");
-const gitHub: Skill = new Skill("GitHub", "/images/skills/github.svg");
-const docker: Skill = new Skill("Docker", "/images/skills/docker.svg");
-const unity: Skill = new Skill("Unity", "/images/skills/unity.svg");
-const blender: Skill = new Skill("Blender", "/images/skills/blender.png");
-const sql: Skill = new Skill("SQL", "/images/skills/sql.svg");
+const skillsImagesPath = "/cv/images/skills"
+
+const csharp: Skill = new Skill("C#", skillsImagesPath + "/csharp.svg");
+const javaScript: Skill = new Skill("JavaScript", skillsImagesPath + "/javascript.svg");
+const typescript: Skill = new Skill("TypeScript", skillsImagesPath + "/typescript.svg");
+const html: Skill = new Skill("HTML", skillsImagesPath + "/html.svg");
+const css: Skill = new Skill("CSS", skillsImagesPath + "/css.svg");
+const tailwind: Skill = new Skill("tailwind", skillsImagesPath + "/tailwind.svg");
+const react: Skill = new Skill("React.js", skillsImagesPath + "/react.svg");
+const next: Skill = new Skill("Next.js", skillsImagesPath + "/next.svg");
+const gitHub: Skill = new Skill("GitHub", skillsImagesPath + "/github.svg");
+const docker: Skill = new Skill("Docker", skillsImagesPath + "/docker.svg");
+const unity: Skill = new Skill("Unity", skillsImagesPath + "/unity.svg");
+const blender: Skill = new Skill("Blender", skillsImagesPath + "/blender.png");
+const sql: Skill = new Skill("SQL", skillsImagesPath + "/sql.svg");
 
 export function getCategoryManagerData(): CategoryManager {
     const manager = new CategoryManager();
@@ -76,6 +78,7 @@ export function getCategoryManagerData(): CategoryManager {
 
 export function getProjectManagerData(): ProjectManager {
     const manager = new ProjectManager();
+    const projectsImagesPath = "/cv/images/projects";
 
     const drainingDunesUrls = [
         new Url("GitHub", "https://github.com/WesleyBurgt/Draining-Dunes/"),
@@ -86,7 +89,7 @@ export function getProjectManagerData(): ProjectManager {
         "Implemented mission system",
         "Implemented UI"
     ]
-    const drainingDunes = new Project("Draining Dunes", "/images/projects/drainingDunes.png", drainingDunesUrls, drainingDunesmyWork, new Date(2025, 3, 10), new Date(2025, 4, 25), "A delivery simulator game in a desert created for a duo project at Fontys HBO ICT")
+    const drainingDunes = new Project("Draining Dunes", projectsImagesPath + "/drainingDunes.png", drainingDunesUrls, drainingDunesmyWork, new Date(2025, 3, 10), new Date(2025, 4, 25), "A delivery simulator game in a desert created for a duo project at Fontys HBO ICT")
     drainingDunes.addSkills([
         csharp,
         unity,
