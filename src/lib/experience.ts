@@ -1,10 +1,9 @@
 export class Experience {
-    public extraInfo?: string;
-
     constructor(
         public name: string,
         public startYear: number,
-        public endYear?: number
+        public endYear?: number,
+        public extraInfo?: string,
     ) { }
 }
 
