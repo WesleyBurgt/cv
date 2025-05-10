@@ -46,7 +46,7 @@ export default function SkillsSection() {
     const displayedProjects = filteredProjectManager()
 
     return (
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-screen-xl">
             <h1 className="mb-12 text-center text-5xl font-bold">Projects</h1>
 
             <div className="mb-10">
@@ -59,7 +59,7 @@ export default function SkillsSection() {
                 />
             </div>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="flex flex-wrap gap-6">
                 {displayedProjects.projects.length === 0 ? (
                     <p className="white text-xl">No results found.</p>
                 ) : (
