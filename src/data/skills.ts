@@ -80,22 +80,34 @@ export function getProjectManagerData(): ProjectManager {
     const manager = new ProjectManager();
     const projectsImagesPath = "/cv/images/projects";
 
+    const littleMontanaUrls = [new Url("visit site", "https://littlemontana.nl/")]
+    const littlemontanaMyWork = [
+        "Entire HTML and CSS",
+        "Updating agenda"
+    ]
+    const littleMontana = new Project("Little Montana", projectsImagesPath + "/littleMontana.svg", littleMontanaUrls, littlemontanaMyWork, new Date(2023,8), undefined, "A site for a country band, whose content I am still updating")
+    littleMontana.addSkills([
+        html,
+        css
+    ])
+    
     const drainingDunesUrls = [
         new Url("GitHub", "https://github.com/WesleyBurgt/Draining-Dunes/"),
         new Url("play game", "https://wesleyburgt.itch.io/draining-dunes")
     ]
-    const drainingDunesmyWork = [
+    const drainingDunesMyWork = [
         "Implemented and improved car handling throughout the whole project",
         "Implemented mission system",
         "Implemented UI"
     ]
-    const drainingDunes = new Project("Draining Dunes", projectsImagesPath + "/drainingDunes.png", drainingDunesUrls, drainingDunesmyWork, new Date(2025, 3, 10), new Date(2025, 4, 25), "A delivery simulator game in a desert created for a duo project at Fontys HBO ICT")
+    const drainingDunes = new Project("Draining Dunes", projectsImagesPath + "/drainingDunes.png", drainingDunesUrls, drainingDunesMyWork, new Date(2025, 3, 10), new Date(2025, 4, 25), "A delivery simulator game in a desert created for a duo project at Fontys HBO ICT")
     drainingDunes.addSkills([
         csharp,
         unity,
         gitHub
     ])
 
+    manager.addProject(littleMontana);
     manager.addProject(drainingDunes);
 
     return manager;
