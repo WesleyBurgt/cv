@@ -1,5 +1,10 @@
 import ExperienceSection from "@/components/experienceSection";
+import InfoListSection from "@/components/InfoListSection";
 import { EducationList } from "@/data/education";
+import { HardSkillList } from "@/data/hardSkills";
+import { InterestList } from "@/data/interests";
+import { SoftSkillList } from "@/data/softSkills";
+import { SoftwareMotivationList } from "@/data/softwareMotivation";
 import { WorkExperienceList } from "@/data/workExperience";
 import { Calendar, Mail, MapPin } from "lucide-react";
 
@@ -29,24 +34,10 @@ export default function AboutMe() {
             <div className="mt-4 grid grid-cols-1 gap-10 md:grid-cols-2 w-full">
                 <ExperienceSection title="Education" items={EducationList} />
                 <ExperienceSection title="Work experience" items={WorkExperienceList} />
-
-                <div className="p-8 rounded-lg bg-gray-950 h-fit">
-                    <h2 className="text-2xl font-medium">Soft skills</h2>
-                </div>
-                <div className="p-8 rounded-lg bg-gray-950 h-fit">
-                    <h2 className="text-2xl font-medium">Hard skills</h2>
-                </div>
-                <div className="p-8 rounded-lg bg-gray-950 h-fit">
-                    <h2 className="text-2xl font-medium">Software motivations</h2>
-                    <li>Code optimization</li>
-                    <li>Statistics</li>
-                </div>
-                <div className="p-8 rounded-lg bg-gray-950 h-fit">
-                    <h2 className="text-2xl font-medium">Interests</h2>
-                    <li>Motorsport</li>
-                    <li>Simracing</li>
-                    <li>Birdkeeping</li>
-                </div>
+                <InfoListSection title="Soft skills" items={SoftSkillList} />
+                <InfoListSection title="Hard skills" items={HardSkillList} />
+                <InfoListSection title="Software motivations" items={SoftwareMotivationList} />
+                <InfoListSection title="Interests" items={InterestList} />
             </div>
         </div>
     )
