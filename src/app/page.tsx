@@ -31,10 +31,21 @@ export default function AboutMe() {
                 <ExperienceSection title="Work experience" items={WorkExperienceList} />
 
                 <div className="p-8 rounded-lg bg-gray-950 h-fit">
-                    <h2 className="text-2xl font-medium">Interests</h2>
+                    <h2 className="text-2xl font-medium">Soft skills</h2>
+                </div>
+                <div className="p-8 rounded-lg bg-gray-950 h-fit">
+                    <h2 className="text-2xl font-medium">Hard skills</h2>
+                </div>
+                <div className="p-8 rounded-lg bg-gray-950 h-fit">
+                    <h2 className="text-2xl font-medium">Software motivations</h2>
                     <li>Code optimization</li>
                     <li>Statistics</li>
-                    <li>Motorsport and simracing</li>
+                </div>
+                <div className="p-8 rounded-lg bg-gray-950 h-fit">
+                    <h2 className="text-2xl font-medium">Interests</h2>
+                    <li>Motorsport</li>
+                    <li>Simracing</li>
+                    <li>Birdkeeping</li>
                 </div>
             </div>
         </div>
