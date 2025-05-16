@@ -21,7 +21,7 @@ function filteredCategoryList(query: string): SkillCategory[] {
 
         if (matchingSkills.length > 0) {
             const filteredCategory = new SkillCategory(
-                category.name, 
+                category.name,
                 category.skills
             );
             filtered.push(filteredCategory);

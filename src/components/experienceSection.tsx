@@ -1,4 +1,4 @@
-import { Experience } from "@/lib/experience"; 
+import { Experience } from "@/lib/experience";
 
 interface ExperienceSectionProps {
     title: string;
