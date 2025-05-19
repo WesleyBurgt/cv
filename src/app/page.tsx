@@ -1,16 +1,26 @@
+"use client";
+
 import ExperienceSection from "@/components/experienceSection";
 import InfoListSection from "@/components/InfoListSection";
+import { Button } from "@/components/ui/button";
 import { EducationList } from "@/data/education";
 import { HardSkillList } from "@/data/hardSkills";
 import { InterestList } from "@/data/interests";
 import { SoftSkillList } from "@/data/softSkills";
 import { SoftwareMotivationList } from "@/data/softwareMotivation";
 import { WorkExperienceList } from "@/data/workExperience";
+import { generatePdf } from "@/lib/generatePdf";
 import { Calendar, Mail, MapPin } from "lucide-react";
 
 export default function AboutMe() {
     return (
         <div className="text-center justify-items-center">
+            <Button onClick={generatePdf} className="bg-gray-800 mt-1 text-2xl p-6">
+                View as PDF
+            </Button>
+
+            <div className="h-px w-full bg-gray-700 my-6"></div>
+
             <h1 className="text-3xl font-bold">Contact</h1>
             <div className="flex">
                 <Mail className="mr-2" />
