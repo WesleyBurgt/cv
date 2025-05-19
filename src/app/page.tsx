@@ -31,7 +31,7 @@ export default function AboutMe() {
                 Zeeland, NB
             </div>
 
-            <div className="mt-4 grid grid-cols-1 gap-10 md:grid-cols-2 w-full">
+            <div className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-2 w-full">
                 <ExperienceSection title="Education" items={EducationList} />
                 <ExperienceSection title="Work experience" items={WorkExperienceList} />
                 <InfoListSection title="Soft skills" items={SoftSkillList} />
