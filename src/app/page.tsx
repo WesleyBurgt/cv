@@ -15,12 +15,6 @@ import { Calendar, Mail, MapPin } from "lucide-react";
 export default function AboutMe() {
     return (
         <div className="text-center justify-items-center">
-            <Button onClick={generatePdf} className="bg-gray-800 mt-1 text-2xl p-6">
-                View as PDF
-            </Button>
-
-            <div className="h-px w-full bg-gray-700 my-6"></div>
-
             <h1 className="text-3xl font-bold">Contact</h1>
             <div className="flex">
                 <Mail className="mr-2" />
@@ -49,6 +43,12 @@ export default function AboutMe() {
                 <InfoListSection title="Software motivations" items={SoftwareMotivationList} />
                 <InfoListSection title="Interests" items={InterestList} />
             </div>
+
+            <div className="h-px w-full bg-gray-700 my-6"></div>
+
+            <Button onClick={generatePdf} className="bg-gray-800 mt-1 text-2xl p-6">
+                View as PDF
+            </Button>
         </div>
     )
 }
