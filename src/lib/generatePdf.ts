@@ -44,8 +44,8 @@ export const generatePdf = () => {
         return yPos + 4;
     };
 
-    const drawExperience = (experienceList: Experience[], x: number, yStart: number) => {
-        let y = drawColumnTitle("Education", x, yStart);
+    const drawExperience = (title: string, experienceList: Experience[], x: number, yStart: number) => {
+        let y = drawColumnTitle(title, x, yStart);
         doc.setFont("helvetica", "normal");
         doc.setFontSize(defaultFontSize);
 
@@ -106,8 +106,8 @@ export const generatePdf = () => {
     doc.text(`Site: ${siteUrl}`, pageWidth / 2, y, { align: "center" });
     y += 12;
 
-    const eduYEnd = drawExperience(EducationList, leftX, y);
-    const workYEnd = drawExperience(WorkExperienceList, rightX, y);
+    const eduYEnd = drawExperience("Education", EducationList, leftX, y);
+    const workYEnd = drawExperience("Work experience", WorkExperienceList, rightX, y);
     y = Math.max(eduYEnd, workYEnd) + 8;
 
     const softYEnd = drawBulletedSection("Soft Skills", SoftSkillList, leftX, y);
