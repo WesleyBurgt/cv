@@ -49,7 +49,8 @@ export const generatePdf = () => {
         doc.setFont("helvetica", "normal");
         doc.setFontSize(defaultFontSize);
 
-        experienceList.forEach((item) => {
+        let sortedList = experienceList.toSorted(function(a, b){return b.startYear-a.startYear})
+        sortedList.forEach((item) => {
             const duration = `${item.startYear}–${item.endYear || "Present"}`;
             doc.text(duration, x, y);
             doc.text(item.name, x + columnWidth, y, { align: "right" });
