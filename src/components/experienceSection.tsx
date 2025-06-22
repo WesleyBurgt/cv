@@ -6,7 +6,7 @@ interface ExperienceSectionProps {
 }
 
 export default function ExperienceSection({ title, items }: ExperienceSectionProps) {
-    var sortedItems = items.toSorted(function(a, b){return b.startYear-a.startYear})
+    const sortedItems = items.toSorted(function(a, b){return b.startYear-a.startYear})
 
     return (
         <div className="p-8 rounded-lg bg-gray-950 h-fit">
