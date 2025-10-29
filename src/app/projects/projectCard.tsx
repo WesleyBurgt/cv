@@ -67,9 +67,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
                 <div>
                     <span className="font-medium">My work:</span>
-                    {project.myWork.map((work, index) => (
-                        <li key={index}>{work}</li>
-                    ))}
+                    <ul className="list-disc list-inside">
+                        {project.myWork.map((work, index) => (
+                            <li key={index}>{work}</li>
+                        ))}
+                    </ul>
                 </div>
 
                 <div className="flex flex-col mt-2 items-end">
