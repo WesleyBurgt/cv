@@ -1,27 +1,29 @@
 import { Experience } from "@/lib/experience";
+import { WorkExperience } from "@/lib/workExperience";
 
 interface ExperienceSectionProps {
     title: string;
     items: Experience[];
 }
 
-function formatTimeframe (item: Experience): string {
-        const startDate = (item as any).startDate as Date | undefined;
-        const endDate = (item as any).endDate as Date | undefined;
+export function formatTimeframe(item: Experience): string {
+    const isWorkExperience = item instanceof WorkExperience;
+    const startDate = isWorkExperience ? item.startDate : undefined;
+    const endDate = isWorkExperience ? item.endDate : undefined;
 
-        const format = (date: Date | undefined, fallbackYear: number | undefined, isEnd = false): string => {
-            if (date instanceof Date) {
-                return date.toLocaleString("en-US", { month: "short", year: "numeric" });
-            }
-            if (isEnd) return fallbackYear?.toString() ?? "Present";
-            return fallbackYear?.toString() ?? "";
-        };
-
-        const start = format(startDate, item.startYear);
-        const end = format(endDate, item.endYear, true);
-
-        return `${start} – ${end}`;
+    const format = (date: Date | undefined, fallbackYear: number | undefined, isEnd = false): string => {
+        if (date instanceof Date) {
+            return date.toLocaleString("en-US", { month: "short", year: "numeric" });
+        }
+        if (isEnd) return fallbackYear?.toString() ?? "Present";
+        return fallbackYear?.toString() ?? "";
     };
+
+    const start = format(startDate, item.startYear);
+    const end = format(endDate, item.endYear, true);
+
+    return `${start} – ${end}`;
+};
 
 export default function ExperienceSection({ title, items }: ExperienceSectionProps) {
     const sortedItems = items.toSorted((a, b) => b.startYear - a.startYear);
