@@ -6,7 +6,3 @@ export class Experience {
         public extraInfo?: string,
     ) { }
 }
-
-export class Education extends Experience { }
-
-export class WorkExperience extends Experience { }
