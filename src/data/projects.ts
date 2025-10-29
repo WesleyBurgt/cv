@@ -7,10 +7,11 @@ const projectsImagesPath = "/cv/images/projects";
 const littleMontanaSkills = [
     FindSkill("HTML"),
     FindSkill("CSS"),
+    FindSkill("JavaScript"),
 ];
 const littleMontanaUrls = [new Url("visit site", "https://littlemontana.nl/")];
 const littlemontanaMyWork = [
-    "Entire HTML and CSS",
+    "Entire HTML, CSS and JavaScript",
     "Updating agenda"
 ];
 const littleMontana = new Project("Little Montana", projectsImagesPath + "/littleMontana.svg", littleMontanaSkills, littleMontanaUrls, littlemontanaMyWork, new Date(2023, 8), undefined, "A site for a country band, whose content I am still updating");
