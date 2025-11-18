@@ -18,7 +18,7 @@ export default function AboutMe() {
             <h1 className="text-3xl font-bold">Contact</h1>
             <div className="flex">
                 <Mail className="mr-2" />
-                wesleyburgt [at] gmail [dot] com
+                <a href = "mailto:wesleyburgt@gmail.com">wesleyburgt@gmail.com</a>
             </div>
 
             <div className="h-px w-full bg-gray-700 my-6"></div>
