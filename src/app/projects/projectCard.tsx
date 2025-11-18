@@ -23,7 +23,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     return (
         <div className="flex justify-between w-max rounded-lg bg-gray-950 p-4">
             <div className="flex flex-col items-center flex-1">
-                <div className="h-48 w-48 object-contain">
+                <div className="w-48 mb-2">
                     <Image
                         width={512}
                         height={512}
