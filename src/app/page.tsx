@@ -16,7 +16,7 @@ export default function AboutMe() {
     return (
         <div className="text-center justify-items-center">
             <h1 className="text-3xl font-bold">Contact</h1>
-            <div className="flex">
+            <div className="flex justify-center">
                 <Mail className="mr-2" />
                 <a href = "mailto:wesleyburgt@gmail.com">wesleyburgt@gmail.com</a>
             </div>
@@ -25,12 +25,12 @@ export default function AboutMe() {
 
             <h1 className="text-3xl font-bold">About me</h1>
             <div>Wesley van der Burgt</div>
-            <div className="flex">
+            <div className="flex justify-center">
                 <Calendar className="mr-2" />
                 2-10-2006
 
             </div>
-            <div className="flex">
+            <div className="flex justify-center">
                 <MapPin className="mr-2" />
                 Zeeland, NB
             </div>
