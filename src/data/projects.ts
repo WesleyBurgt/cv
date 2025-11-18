@@ -30,11 +30,27 @@ const drainingDunesMyWork = [
     "Implemented and improved car handling throughout the whole project",
     "Implemented mission system",
     "Implemented UI",
-    "Modeled navigation cursor",
 ];
 const drainingDunes = new Project("Draining Dunes", projectsImagesPath + "/drainingDunes.png", drainingDunesSkills, drainingDunesUrls, drainingDunesMyWork, new Date(2025, 3, 10), new Date(2025, 4, 25), "A delivery simulator game in a desert created for a duo project at Fontys HBO ICT");
+
+const beatShiftSkills = [
+    FindSkill("C#"),
+    FindSkill("Unity"),
+    FindSkill("GitHub"),
+    FindSkill("Blender"),
+];
+const beatShiftUrls = [
+    new Url("play game", "https://dwintermans.itch.io/beatshift")
+]
+const beatShiftMyWork = [
+    "Implemented the movement system",
+    "Implemented 2d collisions in a 3d world",
+    "Finding and editing assets",
+]
+const beatshift = new Project("BeatShift", projectsImagesPath + "/beatShift.png", beatShiftSkills, beatShiftUrls, beatShiftMyWork, new Date(2025, 9, 8), new Date(2025, 11, 14), "A 2D Perspective Rhythm-Puzzle Platformer created for a duo project at Fontys HBO ICT")
 
 export const ProjectList: Project[] = [
     littleMontana,
     drainingDunes,
+    beatshift,
 ];
