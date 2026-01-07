@@ -32,7 +32,7 @@ export default function AboutMe() {
             </div>
             <div className="flex justify-center">
                 <MapPin className="mr-2" />
-                Zeeland, NB
+                Zeeland (NB), Netherlands
             </div>
 
             <div className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-2 w-full">

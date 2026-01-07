@@ -102,7 +102,7 @@ export const generatePdf = () => {
     y += 6;
     doc.text("Date of birth: 2-10-2006", pageWidth / 2, y, { align: "center" });
     y += 6;
-    doc.text("Location: Zeeland, NB", pageWidth / 2, y, { align: "center" });
+    doc.text("Location: Zeeland (NB), Netherlands", pageWidth / 2, y, { align: "center" });
     y += 6;
     doc.text(`Site: ${siteUrl}`, pageWidth / 2, y, { align: "center" });
     y += 12;
